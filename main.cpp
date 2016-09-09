@@ -33,7 +33,7 @@ int main()
 	for(auto& th : threads) th.join();
 	
 	// Once threads are finished, print out the best array and it's fitness.
-	cout << "Best Fitness: " << bestFitness;
+	cout << "Best Fitness: " << bestFitness << endl;
 	printArray(bestArray);
 }
 
@@ -91,13 +91,15 @@ void thread_entry(int* bestArray, double* bestFitness, int threadId)
 	int newArray[100];
 	
 	// Generate X amount of random starting points per thread.
-	while(randomCounter < 10000000)//2000000000)
+	while(randomCounter < 10000000)
 	{
 		// Print out status of search every so often
+		// If this if gets updated, update the first cout line also
 		if(randomCounter % 100000 == 0)
 		{
 			system("clear");
-			cout << ((double)(randomCounter)/(double)(10000000)) * 100.0 << "% random starting points explored on thread " << threadId << endl;
+			cout << ((double)(randomCounter)/(double)(10000000)) * 100.0;
+			cout << "% random starting points explored on thread " << threadId << endl;
 			cout << "Current Maximum: " << *bestFitness << endl;
 		}
 		

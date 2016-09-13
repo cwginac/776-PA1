@@ -79,8 +79,7 @@ void hillClimber()
 	double newFitness = 0;
 	int newArray[100];
 	
-	// Generate X amount of random starting points
-	while(randomCounter < 2)
+	while(randomCounter < 100)
 	{		
 		// Find a new random starting point
 		init(newArray);

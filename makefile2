@@ -1,0 +1,11 @@
+all: main
+
+main: main.o eval2.o
+	g++ -o main.out main.o eval2.o
+
+eval2.o: eval.cpp
+	g++ -o eval2.o -c eval.cpp
+    
+main.o: main.cpp
+	g++ -c main.cpp
+    
